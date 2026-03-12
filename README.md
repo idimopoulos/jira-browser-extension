@@ -2,6 +2,8 @@
 
 Browser side-panel extension for quickly logging work against recently visited Jira issues.
 
+This extension is based on ideas and request patterns from [`jira-cli`](https://github.com/ankitpokhrel/jira-cli).
+
 Current scope:
 - Detect recently visited Jira issues from the page URL
 - Open a Jira issue in a tab
