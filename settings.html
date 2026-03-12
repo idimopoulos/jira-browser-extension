@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Quick Worklog Settings</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="settings-page">
+    <main class="settings">
+      <header class="page-header">
+        <div>
+          <h1>Jira Instances</h1>
+          <p>Manage the Jira sites this extension should track.</p>
+        </div>
+      </header>
+
+      <section class="settings-grid">
+        <form id="instance-form" class="panel">
+          <input id="instance-id" type="hidden">
+          <label class="field">
+            <span>Name</span>
+            <input id="instance-name" type="text" placeholder="Company Jira" required>
+          </label>
+          <label class="field">
+            <span>Base URL</span>
+            <input id="instance-base-url" type="url" placeholder="https://jira.company.com" required>
+          </label>
+          <label class="field">
+            <span>Installation</span>
+            <select id="instance-installation">
+              <option value="cloud">Cloud</option>
+              <option value="local">Local</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Login</span>
+            <input id="instance-login" type="text" placeholder="email or username" required>
+          </label>
+          <label class="field">
+            <span>Auth Type</span>
+            <select id="instance-auth-type">
+              <option value="basic">Basic</option>
+              <option value="bearer">Bearer</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Access Key</span>
+            <input id="instance-access-key" type="password" placeholder="API token / password / PAT" required>
+          </label>
+          <div class="inline-form">
+            <button class="primary-button" type="submit">Save Instance</button>
+            <button id="cancel-edit" class="secondary-button" type="button">Cancel</button>
+          </div>
+          <div id="settings-message" class="message-line"></div>
+        </form>
+
+        <section class="panel">
+          <h2>Configured Instances</h2>
+          <div id="instance-list" class="stack"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="instance-template">
+      <article class="instance-card">
+        <div class="instance-details">
+          <strong class="instance-name"></strong>
+          <div class="instance-url"></div>
+        </div>
+        <div class="inline-form">
+          <button class="secondary-button edit-instance-button" type="button">Edit</button>
+          <button class="secondary-button delete-instance-button" type="button">Delete</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="storage.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

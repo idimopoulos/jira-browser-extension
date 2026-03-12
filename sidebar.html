@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Quick Worklog Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="sidebar-page">
+    <main class="sidebar">
+      <header class="page-header compact-header">
+        <a class="icon-button" href="settings.html" target="_blank" rel="noreferrer" aria-label="Open settings" title="Settings">&#9881;</a>
+      </header>
+
+      <section id="sidebar-content" class="stack"></section>
+    </main>
+
+    <template id="ticket-template">
+      <article class="ticket-card">
+        <div class="ticket-header">
+          <a class="ticket-key" target="_blank" rel="noreferrer"></a>
+          <div class="ticket-title"></div>
+        </div>
+        <div class="ticket-meta assignee-line"></div>
+        <div class="ticket-actions">
+          <div class="inline-form single-action">
+            <button class="secondary-button open-ticket-button" type="button">Open Ticket</button>
+          </div>
+          <div class="inline-form single-action">
+            <input class="comment-input" type="text" placeholder="Worklog description">
+          </div>
+          <div class="inline-form">
+            <input class="time-input" type="text" placeholder="30m or 1h 30m" value="30m">
+            <button class="primary-button log-work-button" type="button">Log Time</button>
+          </div>
+          <div class="message-line"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="storage.js"></script>
+    <script src="sidebar.js"></script>
+  </body>
+</html>
